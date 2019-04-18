@@ -10,8 +10,8 @@ npm run start
 ```
 
 ## Endpoints
-[http://localhost:3000/](http://localhost:3000/)
-[https://localhost:8443/](https://localhost:8443/)
+* [http://localhost:3000/](http://localhost:3000/)
+* [https://localhost:8443/](https://localhost:8443/)
 
 ## Results
 TBD
