@@ -5,8 +5,11 @@ const response = `<h1>Hello World</h1>`;
 http.createServer((req, res) => {
     console.log("handling http/1.1")
     res.statusCode = 200;
-    res.end(response);
-}).listen(3000);
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Cache-Control", "private, no-cache, no-store, must-revalidate");
+    res.setHeader("Expires", "-1");
+    res.end(`${response}${Math.random}`);
+}).listen(3001);
 
 http2.createSecureServer({
     key: fs.readFileSync('localhost-privkey.pem'),
@@ -15,7 +18,10 @@ http2.createSecureServer({
         .on('stream', stream => {
             console.log("handling http/2")
             stream.respond({
-                ':status': 200
+                ':status': 200,
+                'Access-Control-Allow-Origin': "*",
+                'Cache-Control': "private, no-cache, no-store, must-revalidate",
+                'Expires': "-1"
             });
             stream.end(response);
 }).listen(8443);

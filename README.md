@@ -15,3 +15,11 @@ npm run start
 
 ## Results
 TBD
+
+```javascript
+const delay = () => new Promise(
+    resolve => setTimeout(() => { resolve() }, 2000));
+    Promise.all([...Array(100)]
+        .map(() => delay()
+            .then(() => fetch(`http://localhost:3000/${Math.random()}`))))
+```
