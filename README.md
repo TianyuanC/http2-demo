@@ -17,8 +17,6 @@ npm run start
 
 ## Results
 
-TBD
-
 ```javascript
 const delay = () =>
     new Promise(resolve =>
@@ -28,7 +26,15 @@ const delay = () =>
     );
 Promise.all(
     [...Array(100)].map(() =>
-        delay().then(() => fetch(`http://localhost:3000/${Math.random()}`))
+        delay().then(() => fetch(`http://localhost:3001/${Math.random()}`))
     )
 );
 ```
+
+### HTTP/1.1
+
+![http1](https://raw.githubusercontent.com/TianyuanC/http2-demo/master/img/http1.png)
+
+### HTTP/2
+
+![http1](https://raw.githubusercontent.com/TianyuanC/http2-demo/master/img/http2.png)
