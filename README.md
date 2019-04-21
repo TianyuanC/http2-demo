@@ -37,10 +37,10 @@ Promise.all(
 
 Concurrent connection is limit to 6 by default in Chrome
 
-![http1](https://raw.githubusercontent.com/TianyuanC/http2-demo/master/img/http1.png)
+![http1](https://raw.githubusercontent.com/TianyuanC/http2-demo/master/img/http1_1.png)
 
 ### HTTP/2
 
 All requests shared the same connection
 
-![http1](https://raw.githubusercontent.com/TianyuanC/http2-demo/master/img/http2.png)
+![http1](https://raw.githubusercontent.com/TianyuanC/http2-demo/master/img/http2_0.png)
