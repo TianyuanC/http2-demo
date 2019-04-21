@@ -11,7 +11,9 @@ http.createServer((req, res) => {
         "private, no-cache, no-store, must-revalidate"
     );
     res.setHeader("Expires", "-1");
-    res.end(`${response}${Math.random()}`);
+    setTimeout(() => {
+        res.end(`${response}${Math.random()}`);
+    }, 2000);
 }).listen(3001);
 
 http2
@@ -22,12 +24,14 @@ http2
     .on("error", err => console.error(err))
     .on("stream", stream => {
         console.log("handling http/2");
-        stream.respond({
-            ":status": 200,
-            "Access-Control-Allow-Origin": "*",
-            "Cache-Control": "private, no-cache, no-store, must-revalidate",
-            Expires: "-1"
-        });
-        stream.end(`${response}${Math.random()}`);
+        setTimeout(() => {
+            stream.respond({
+                ":status": 200,
+                "Access-Control-Allow-Origin": "*",
+                "Cache-Control": "private, no-cache, no-store, must-revalidate",
+                Expires: "-1"
+            });
+            stream.end(`${response}${Math.random()}`);
+        }, 2000);
     })
     .listen(8443);
