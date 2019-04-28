@@ -10,10 +10,8 @@ openssl req -x509 -newkey rsa:2048 -nodes -sha256 -subj /CN=localhost -keyout lo
 npm run start
 ```
 
-## Endpoints
-
--   [http://localhost:3001/](http://localhost:3000/)
--   [https://localhost:8443/](https://localhost:8443/)
+## Blog
+👀 [Read More](https://blog-session-652.netlify.com/posts/how-fast-is-http2/)
 
 ## Results
 
@@ -32,6 +30,10 @@ Promise.all(
     [...Array(100)].map(() => fetch(`https://localhost:8443/${Math.random()}`))
 );
 ```
+
+### Endpoints
+-   [http://localhost:3001/](http://localhost:3000/)
+-   [https://localhost:8443/](https://localhost:8443/)
 
 ### HTTP/1.1
 
